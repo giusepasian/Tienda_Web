@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--
+        Normalize se usa para que tu web sea compatible con varios navegadores
+        https://necolas.github.io/normalize.css/
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <!--
+        Tipo de letra que usara nuestro navegador, el codigo se obtiene de...
+        https://fonts.google.com/?query=staa
+    -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--Encabezado (imagen)-->
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="img/logo.png" alt="Logotipo">
+        </a>
+    </header>
+    <!--Encales-->
+    <nav class="navegacion">
+        <a class="navegacion__enlace--activo" href="index.html">Tienda</a>
+        <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+    </nav>
+
+    <main class="contenedor">
+        <h1> React JS </h1>
+        <div class="camisa">
+            <img class="camisa__imagen" src="img/3.jpg" alt="imagen del producto">
+            <div class="camisa__contenido">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium doloremque numquam deleniti doloribus, recusandae inventore! Reprehenderit, dolores! Fuga, saepe deleniti ullam quaerat deserunt reiciendis officia optio labore doloremque consequuntur veniam.
+                </p>
+                <form class="formulario"> <!--formulario-->
+                    <select class="formulario__campo"> <!--formulario de talle-->
+                        <option disabled selected>--Seleccionar Talla--</option>
+                        <option>Chica</option>
+                        <option>Mediana</option>
+                        <option>Grande</option>
+                    </select>
+                    <!--formulario de cantidad-->
+                    <input class="formulario__campo" type="number" placeholder="Cantidad" min="1">
+                    <!--Placeholder es lo que aparece en gris transparente y min es para que solo sean numeros positivos sin ello seran positivos y negativos-->
+                    <input class="formulario__submit" type="submit" value="Agregar Carrito">
+                    <!--submit sirve para enviar los datos del servidor en este caso del formulario-->
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer__texto">Font End Store- Todos los derechos reservados 2022</p>
+    </footer>
+</body>
+</html>

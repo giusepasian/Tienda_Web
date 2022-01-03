@@ -1,0 +1,325 @@
+:root {
+    --primario: #9C27B0;
+    --primarioOscuro: #89119D;
+    --secundario: #FFCE00;
+    --secundarioOscuro: rgb(233, 187, 2);
+    --blanco: #FFF;
+    --negro: #000;
+
+    --fuentePrincipal: 'Staatliches', cursive;
+}
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/**Globale**/
+body {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+    /*
+        font-size especifica la dimension de la letra
+        background-color color de fondo
+        line-height se refiere al interlineado de la fuente
+    */
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+    /*
+        font-size especifica la dimension de la letra
+        font-family especifica el tipo de letra
+        color le agrega color 
+    */
+}
+a{
+    text-decoration: none;
+    /*
+        text-decoration es para establecer el formato del texto
+    */
+}
+img{
+    width: 100%;
+    /*
+        width especifica la anchura del area de contenido de un elemento
+    */
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+h1, h2, h3{
+    text-align:center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+    /*
+        text-align sirve para aliniar el texto
+        color se agrega color
+        font-family esta propiedad sirver para establecer la fuente o el tipo de letra 
+    */
+}
+h1 { 
+    font-size: 4rem; 
+}
+h2 { 
+    font-size: 3.2rem; 
+}
+h3 { 
+    font-size: 2.4rem; 
+}
+
+/**Header**/
+.header{
+    display: flex;
+    justify-content: center;
+    /* 
+        display flex se usa cuando hay un elemento dentro de otro.
+        justify-content es para alineacion. 
+    */
+}
+.header__logo {
+    margin: 3rem 0;
+    /*  margin consiste en generar un margen en la parte de arriba  */
+}
+/* Footer */
+.footer{
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+    /*
+        background-color se agrega color
+        padding agranda la dimension de un elemento
+        margin-top consiste en generar un margen en la parte de abajo
+    */
+}
+.footer__texto{
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2.2rem;
+    /*
+        font-family esta propiedad sirver para establecer la fuente o el tipo de letra, en este caso.
+        text-align sirve para aliniar el texto.
+        font-size especifica la dimension de la letra.
+    */
+}
+/* Navegacion */
+.navegacion{
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    /*
+        background-color para agregar color de fondo.
+        padding agranda la dimension de un elemento, en este caso del color.
+        display flex se usa cuando hay un elemento dentro de otro.
+        justify-content es para alineacion.
+        gap es para generar una separacion, se usa en el caso de tener un flex.
+    */
+}
+.navegacion__enlace{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+    /*
+        font-family determina el tipo de tipografia.
+        color agrega color al contenido.
+        font-size determina la dimension del contenido.
+    */
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{
+    color: var(--secundario);
+    /*
+        hover se usa cuando uno quiere resaltar algo que el usuario lo marca con el mouse
+    */
+}
+/**GRID**/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    /*
+        grid-template-columns: repeat(2, 1fr) hace que se ve en dos columnas los elemenos.
+        gap:...; consiste en el margen de separacion de elementos.
+    */
+}
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/**Productos**/
+.producto{
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+    /*
+        background-color: var(--primarioOscuro); hace que se modifique el color de fondo del elemento producto.
+        padding genera un margen hacia arriba.
+    */
+}
+.producto__imagen{
+    width: 100%;
+    /*
+        width cubre el espacio sobrante que el padding no lo pudo hacer.
+    */
+}
+.producto__nombre{
+    font-size: 4rem;
+    /*
+        font-size: 4rem; consiste modificar la dimension del contenido
+    */
+}
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--secundario);
+    /*
+        font-size: 2.8rem; consiste modificar la dimension del contenido
+    */
+}
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+    /*
+        font-family: var(--fuentePrincipal) modifica la tipografia
+        margin 
+        text-align: center; para que este horizontal
+        line-height
+    */
+}
+/** Graficos **/
+.grafico {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+.grafico--camisas {
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+    /*
+        background-image: url se usa para agregar una imagen
+        grid-row son los numeros que aparecen en el navegador y su orden es de arriba hacia abajo
+    */
+}
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+     /*
+        background-image: url se usa para agregar una imagen   
+        grid-row son los numeros que aparecen en el navegador y su orden es de arriba hacia abajo
+    */
+}
+
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+/** Nosotros **/
+.nosotros{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+        /* esto nos permite posicionar la imagen donde queramos, gracias al display grid (distribuye elementos) */
+}
+@media (min-width: 768px) {
+    .nosotros{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.nosotros__imagen{
+    grid-row: 1 / 2;
+    /* hace que la imagen se posicione arriba cuando se cambia de dispostivo pero necesita del mq y el width cobre el espacio sobrante*/
+}
+@media (min-width: 768px) {
+    .nosotros__imagen{
+        grid-column: 2 / 3;
+    }
+}
+/** BLOQUES **/
+.bloques{
+    /*Genera dos columnas*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    /*Con el mq hace que se vea 4 columnas en tablet o pc*/
+    .bloques{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.bloque{
+    text-align: center;
+    /*Centra el contenido*/
+}
+
+.bloque__tiutlo{
+    margin: 0;
+}
+/**Pagina del producto**/
+@media (min-width: 768px) {
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    /*
+        grid-template-columns genera 2 columnas
+        gap esta generando una separacion
+    */
+}
+.formulario__campo{
+    /*
+        border-color: var(--primarioOscuro); Color del borde.
+        border-width: 1rem; Ancho del borde.
+        border-style: solid; Tipo de borde.
+    */
+        border: 1rem solid var(--primarioOscuro);
+        background-color: transparent;
+        color: var(--blanco);
+        font-size: 2rem;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 1rem;
+        appearance: none;
+    /*
+        background-color: transparent; lo hace transparente
+        color cambia el color
+        font-size modifica el tamaño del contenido
+        font-family tipo de letra
+        padding modifica el tamaño del input
+    */
+}
+.formulario__submit{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column: 1 / 3;
+    /*
+        transition hace que al pasar con el mouse se modifique un elemento
+    */
+}
+.formulario__submit:hover{
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
